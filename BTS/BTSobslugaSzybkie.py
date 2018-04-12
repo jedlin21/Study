@@ -6,7 +6,6 @@ Created on Tue Apr 10 15:13:57 2018
 @author: i
 """
 from BTS import Tree
-from MyList import MyList
 from Bisection import Bisection
 from Plot import myPlot
 import numpy as np
@@ -37,9 +36,9 @@ sTB = []
 hTR = []
 hTB = []
 
-for multiplier in range(1,21):
+for multiplier in range(1,11):
     tabRandom = np.array
-    tabRandom = np.random.randint(1000000*multiplier, size=500*multiplier) #make table multiplier * 1,000 where multiplier[1,10]
+    tabRandom = np.random.randint(1000000*multiplier, size=10000*multiplier) #make table multiplier * 1,000 where multiplier[1,10]
     
     X.append(tabRandom.size)  
 ########################### 2 #################################################
@@ -50,14 +49,6 @@ for multiplier in range(1,21):
     end = time.time()
     cB.append(end - start)         
 
-    start = time.time()                       
-    for val in tabRandom:           #serching
-        for x in tabCopy:           #find values in the unsorted tabCopy
-            if(val == x):
-                break
-    end = time.time()
-    sB.append(end - start)
-
     start = time.time()
     for val in tabRandom:            #find values in the unsorted tabCopy by bisection search
         Bisection(val, tabCopy)
@@ -65,19 +56,11 @@ for multiplier in range(1,21):
     sbB.append(end - start)
     
 ############################ 3 ################################################
-    start = time.time()
-    myList = MyList()            ###List creation
-    for elem in tabRandom:
-        myList.add(elem)
-    end = time.time()
-    cL.append(end - start)
-    
-    
-    start = time.time()
-    for elem in tabRandom:      ###Searching
-        myList.has(elem)        #If it has an element myList.has(elem) will return True 
-    end = time.time()
-    sL.append(end - start)
+
+
+
+
+
     
 ################################## 4 ##########################################
     start = time.time()
@@ -112,14 +95,14 @@ for multiplier in range(1,21):
 
 ### 1
 #cB cL cTR cTB (x)
-legend = ["Kopiowanie i sortowanie tablicy", "Budowa listy jednokierunkowej", "Budowa drzewa BST"]   # , "cTB"
-data = [cB, cL, cTR]           # , cTB
+legend = ["Kopiowanie i sortowanie tablicy", "Budowa drzewa BST"]   # , "cTB"
+data = [cB, cTR]           # , cTB
 myPlot(X, data, legend,"Ilość elementów", "Czas [s]")
 
 
 ### 2 
-legend = ["Szukanie w tablicy", "Bisection search", "Szukanie w liście", "Szukanie w drzewie BST"]      ### Tu brakuje jeszcze sTB!!!!!!!!!!!!!!!!
-data = [sB, sbB, sL, sTR]
+legend = ["Bisection search", "Szukanie w drzewie BST"]      ### Tu brakuje jeszcze sTB!!!!!!!!!!!!!!!!
+data = [sbB, sTR]
 myPlot(X, data, legend, "Ilość elementów", "Czas [s]")
 
 

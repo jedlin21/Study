@@ -8,11 +8,13 @@ Created on Wed Apr 11 10:42:44 2018
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def myPlot(x, data, legend):
+def myPlot(x, data, legend, xlabel = '', ylabel = ''):
     #Plot
     for y in data:
-        plt.plot(x, y)
+        plt.plot(x, y, 'o-')
     plt.legend(legend, loc='upper left')
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
     plt.show()
     
     #Show tables
