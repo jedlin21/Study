@@ -8,7 +8,7 @@ Created on Wed Apr 11 10:42:44 2018
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def myPlot(x, data, legend, columnNames, xlabel = '', ylabel = '', title = ''):
+def myPlot(x, data, legend = '', columnNames = '', xlabel = '', ylabel = '', title = ''):
     #Plot
     for y in data:
         plt.plot(x, y, 'o-')
