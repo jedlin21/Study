@@ -43,7 +43,7 @@ hTB = []
 
 for multiplier in range(1,21):
     tabRandom = np.array
-    tabRandom = np.random.randint(1000000*multiplier, size=300*multiplier) #make table multiplier * 1,000 where multiplier[1,10]
+    tabRandom = np.random.randint(1000000*multiplier, size=100*multiplier) #make table multiplier * 1,000 where multiplier[1,10]
     
     X.append(tabRandom.size)  
 ########################### 2 #################################################
