@@ -12,9 +12,11 @@ from DFS import DFS
 from returnEdges import returnEdgesAM, returnEdgesAL, returnEdgesET
 from Plot import myPlot
 import time
+import sys
+sys.setrecursionlimit(12500)
 
 #data to change
-n = 100  
+n = 10
 
 
 #Prepare count table
