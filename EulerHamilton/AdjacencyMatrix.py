@@ -86,25 +86,3 @@ def deleteLoops(AM):
         if AM[index][index]:
            AM[index][index] = 0 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
