@@ -15,14 +15,19 @@ def DFS_Euler(AL):
     Returned "explored" list is Euleric path"""
     global explored
     global Alist
-    Alist = AL
+    Alist = AL[:]
     explored = []
-    for rowIndex ,row in enumerate(Alist): 
-        for index, vertex in enumerate(row):
-            _DFS_Euler(vertex, index, rowIndex)    
-            explored.append(vertex)
-    if not explored[0] == explored[-1]:
-        explored.append(explored[0])
+    #for rowIndex , row in enumerate(AL): 
+    #    if not lists_of_lists_has_only_empty_lists(Alist):
+     #       Alist = AL[:]
+      #      explored = []
+    for index, vertex in enumerate(AL[0]):
+        _DFS_Euler(vertex, index, 0)  
+        explored.append(vertex)
+        print("I'm in the main loop", explored)
+    explored.append(0)
+ #   if not explored[0] == explored[-1]:
+  #      explored.append(explored[0])
     print(explored)                                     
     
 def _DFS_Euler(vIndex, index, rIndex):
@@ -33,17 +38,26 @@ def _DFS_Euler(vIndex, index, rIndex):
     Next we seek for index of vertex -> rowIndex connection in Alist[rowIndex]
     using bisection search
     Finally we delete connection between vertex -> rowIndex"""
+    print(Alist)
+    print("rIndex", rIndex)
+    print("index", index)
+    print("vIndex", vIndex)
     Alist[rIndex].pop(index)
     indexToDelete = Bisection(rIndex, Alist[vIndex])
     Alist[vIndex].pop(indexToDelete)
     for ind, vertex in enumerate(Alist[vIndex]):             
         _DFS_Euler(vertex, ind, vIndex)              
         explored.append(vertex)
+        print("I'm in the second loop", explored)
 
    
 
 
-
+def lists_of_lists_has_only_empty_lists(List):
+    for element in List:
+        if len(element) != 0:
+            return False
+    return True
 
 
 
