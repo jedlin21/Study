@@ -17,17 +17,11 @@ def DFS_Euler(AL):
     global Alist
     Alist = AL[:]
     explored = []
-    #for rowIndex , row in enumerate(AL): 
-    #    if not lists_of_lists_has_only_empty_lists(Alist):
-     #       Alist = AL[:]
-      #      explored = []
     for index, vertex in enumerate(AL[0]):
         _DFS_Euler(vertex, index, 0)  
         explored.append(vertex)
         print("I'm in the main loop", explored)
     explored.append(0)
- #   if not explored[0] == explored[-1]:
-  #      explored.append(explored[0])
     print(explored)                                     
     
 def _DFS_Euler(vIndex, index, rIndex):
