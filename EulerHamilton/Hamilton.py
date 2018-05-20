@@ -5,7 +5,7 @@ Created on Fri Apr 20 16:40:47 2018
 
 @author: Patryk Jedlikowski
 
-Find one Hamilton path or every Hamilton paths by DFS algorithm 
+Find one Hamilton path or all Hamilton paths by DFS algorithm 
 """
 
 
