@@ -28,17 +28,23 @@ def _DFS_Hamilton_one(explored, AL, previous, nextV):
     and first vertex is equal to last vertex we find Hamilton path.
     Set flag to True and append explored to H_sequence"""
     global flag
+    if flag: 
+            return
     global H_sequence
     explored.append(nextV)
-    if len(explored) == len(AL[0]):
+    if len(explored) == len(AL):
             flag = True
-            H_sequence = explored
+            H_sequence = explored[:]
     for vertex in AL[nextV]:
+        if flag: 
+            return
         if vertex in explored:
             continue
-        _DFS_Hamilton_one(explored, AL, nextV, vertex)         
+        _DFS_Hamilton_one(explored, AL, nextV, vertex) 
+        
         if flag: 
-            break
+            return
+    explored.pop() 
    
 
 
@@ -51,7 +57,6 @@ def DFS_Hamilton_all(AL):
     explored = [0]
     for vertex in AL[0]: 
         _DFS_Hamilton_all(explored, AL, 0, vertex)  
-        explored.pop()
     return H_sequences
                              
     
@@ -72,5 +77,5 @@ def _DFS_Hamilton_all(explored, AL, previous, nextV):
         if vertex in explored:
             continue
         _DFS_Hamilton_all(explored, AL, nextV, vertex)
-        explored.pop()             #clear last  vertex when exit recursion step
+    explored.pop()             #clear last  vertex when exit recursion step
         

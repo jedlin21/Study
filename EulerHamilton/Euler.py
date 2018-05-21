@@ -21,6 +21,7 @@ def DFS_Euler(AL):
         _DFS_Euler(vertex, index, 0)  
         explored.append(vertex)
     explored.append(0)
+    Alist = ["hello"]
     return explored                                     
     
 def _DFS_Euler(vIndex, index, rIndex):
