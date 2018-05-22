@@ -22,7 +22,7 @@ threading.stack_size(6710886400) # 64MB * 100 stack
 n = 1
 change_step = 55
 break_for_all_Hamilton_paths = 15                          # 15
-break_Hamilton_paths =  break_for_all_Hamilton_path = 27   # 27
+break_Hamilton_paths =  break_for_all_Hamilton_path = 25   # 27
 
 
 MEAN_searching_for_one_Hamilton_path_time_d02 = []
@@ -67,8 +67,8 @@ for x in range(5):
     
     """_____________________________________________________________________ """
 
-    for multiplier in range(10,30):
-        if multiplier > break_for_all_Hamilton_paths:
+    for multiplier in range(10,36):
+        if multiplier > break_Hamilton_paths:
             multiplier *= change_step
         
         am02 = makeEulerAM(multiplier * n, 0.2)          #AdjacencyMatrix d = 20%
