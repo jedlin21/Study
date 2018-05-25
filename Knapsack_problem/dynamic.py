@@ -5,7 +5,8 @@ Created on Fri May 25 16:27:03 2018
 
 @author: i
 """
-from weightAndValues import make_Weights_and_values
+#from weightAndValues import make_Weights_and_values
+
 
 def dynamic(i, l, weights, values):
     if l == 0:
@@ -19,3 +20,28 @@ def dynamic(i, l, weights, values):
             return max(dynamic(i-1, l, weights, values),
                        dynamic(i-1, l-weights[i], weights, values) + values[i])
     
+def set_indexes(i, l, weights, values):
+    tab_indexes = []  
+    for x in range(i+1):
+        tab_indexes.append(x)    
+    _set_indexes(i, l, weights, values, tab_indexes)
+    return tab_indexes
+    
+def _set_indexes(i, l, weights, values, tab_indexes):
+    if i == 0:
+        return 
+    if dynamic(i, l, weights, values) == dynamic(i-1, l, weights, values):
+        tab_indexes[i] = 0
+        _set_indexes(i-1, l, weights, values, tab_indexes)
+    else:
+        tab_indexes[i] = 1
+        _set_indexes(i-1, l-weights[i], weights, values, tab_indexes)
+        
+        
+        
+        
+        
+        
+        
+        
+        
