@@ -8,6 +8,8 @@ Created on Fri May 25 16:27:03 2018
 #from weightAndValues import make_Weights_and_values
 
 
+
+"""Find the best value of knapsack problem by dynamic programming """
 def dynamic(i, l, weights, values):
     if l == 0:
         return 0
@@ -20,7 +22,9 @@ def dynamic(i, l, weights, values):
             return max(dynamic(i-1, l, weights, values),
                        dynamic(i-1, l-weights[i], weights, values) + values[i])
     
-def set_indexes(i, l, weights, values):
+"""Check which indexes give the best value of knapsack problem 
+    by dynamic programming """
+def find_the_best_indexes(i, l, weights, values):
     tab_indexes = []  
     for x in range(i+1):
         tab_indexes.append(x)    
