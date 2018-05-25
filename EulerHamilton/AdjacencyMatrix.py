@@ -26,7 +26,9 @@ def makeEulerAM(verticies, destiny):
         At the end connect closing vertex to starting vertex"""
         while (eulerAM[previousVertex][vertexToConnect] == 1 
                or previousVertex == vertexToConnect):
-            if eulerAM[previousVertex].sum == len(eulerAM): #there are all ones
+            if sum(eulerAM[previousVertex]) == len(eulerAM):
+                print(eulerAM[previousVertex].sum)
+                print(len(eulerAM))
                 previousVertex = vertexToConnect
                 vertexToConnect = np.random.randint(verticies)
             vertexToConnect = np.random.randint(verticies)

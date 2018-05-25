@@ -20,9 +20,9 @@ threading.stack_size(6710886400) # 64MB * 100 stack
 
 #data to change
 n = 1
-change_step = 55
-break_for_all_Hamilton_paths = 15                          # 15
-break_Hamilton_paths =  break_for_all_Hamilton_path = 25   # 27
+change_step = 2
+break_for_all_Hamilton_paths = 12                       # 15
+break_Hamilton_paths =  break_for_all_Hamilton_path = 23   # 27
 
 
 MEAN_searching_for_one_Hamilton_path_time_d02 = []
@@ -35,7 +35,7 @@ MEAN_searching_for_Euler_path_time_d06 = []
 MEAN_searching_for_one_Hamilton_path_time_d06 = []
 MEAN_searching_for_all_Hamilton_path_time_d06 = []
 
-for x in range(5):
+for x in range(1):
     #Prepare count table
     X = []
     X_for_all_Hamilton_paths = []
@@ -156,7 +156,7 @@ for x in range(5):
             searching_for_all_Hamilton_path_time_d02.append(0)
         
     
-        print("Done ", multiplier / change_step, "/30")
+        print("Done ", multiplier / change_step, "/35")
         print("Vertices = ", multiplier)
 #MEAN
     if x == 0:
