@@ -30,5 +30,3 @@ def full(n, d, weights, values):
                 mask[-i] = 1
                 break
     return (max_value, indexes)
-            
-        
