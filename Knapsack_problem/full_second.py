@@ -7,7 +7,7 @@ Created on Mon May 28 11:14:50 2018
 """
 import numpy as np
 
-def backtracking(d, weights, values):
+def full_second(d, weights, values):
     """Go throw AL list. When there is connection between vertex and next 
     vertex go there. 
     Return all founded Hamilton paths."""
@@ -46,7 +46,6 @@ def _backtracking(explored_sequence, explored, AL,
         and bufor_profit > max_profit):   
         H_sequences = explored.copy()   
         max_profit = bufor_profit 
-        print(max_profit, explored)
     for vertex in AL[nextV]:
         if explored[vertex]:
             continue

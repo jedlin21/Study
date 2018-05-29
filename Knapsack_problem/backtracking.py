@@ -51,7 +51,6 @@ def _backtracking(explored_sequence, explored, AL,
     if  bufor_profit > max_profit:   
         H_sequences = explored.copy()   
         max_profit = bufor_profit 
-        print(max_profit, explored)
     for vertex in AL[nextV]:
         if explored[vertex]:
             continue

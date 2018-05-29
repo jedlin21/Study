@@ -9,10 +9,11 @@ import numpy as np
 
 """Find the best value and indexes of knapsack problem by look at all 
    the possibilities """
-def full(n, d, weights, values):
+def full(d, weights, values):
     """Let's mask be like binary number. Multiply weights and mask and check if
     it is smaller than knapsack.
     If it is smaller then copare sum of values with max_value."""
+    n = len(weights)-1
     mask = np.zeros(n+1)
     max_value = 0
     for x in range(2**n):
