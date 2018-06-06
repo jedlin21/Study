@@ -10,17 +10,17 @@ Created on Fri May 25 16:27:03 2018
 
 
 """Find the best value of knapsack problem by dynamic programming """
-def dynamic(i, l, weights, values):
-    if l == 0:
+def dynamic(i, d, weights, values):
+    if d == 0:
         return 0
     elif i == 0:
         return 0
     else:
-        if weights[i] > l:
-            return dynamic(i-1, l, weights, values)
+        if weights[i] > d:
+            return dynamic(i-1, d, weights, values)
         else:
-            return max(dynamic(i-1, l, weights, values),
-                       dynamic(i-1, l-weights[i], weights, values) + values[i])
+            return max(dynamic(i-1, d, weights, values),
+                       dynamic(i-1, d-weights[i], weights, values) + values[i])
     
 """Check which indexes give the best value of knapsack problem 
     by dynamic programming """
